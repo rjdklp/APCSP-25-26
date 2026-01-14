@@ -33,16 +33,21 @@ filterData();
 
 function filterData(){
   console.log("filterData Activated");
-  for (var index; index<dateUnfiltered.length; index++){
-    if (dateUnfiltered[index] === "Thu 1/15"){
+  var index = 0;
+  while(true){
+    if (index > dateUnfiltered.length){
+      break;
+    }
+    if (dateUnfiltered[index] == "Thu 1/15"){
       appendItem(cityFiltered, cityUnFiltered[index]);
       appendItem(highFiltered, highUnFiltered[index]);
       appendItem(lowFiltered, lowUnFiltered[index]);
       appendItem(conditionFiltered, conditionUnFiltered[index]);
       appendItem(iconFiltered, iconUnFiltered[index]);
-      console.log(dateUnfiltered);
+      index = index + 1;
+      continue;
     } else{
-      console.log("continuned");
+      index = index + 1;
       continue;
     }
   }
