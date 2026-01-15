@@ -1,3 +1,6 @@
+// Hides the forecast button so that users cannot run code before the app is finished loading
+hideElement("forecastButton");
+
 // Pulls data from the Daily Weather dataset in Code.org
 // Adds the previously pulled data to lists which are unfiltered and will later be filtered by date
 var cityUnFiltered = getColumn("Daily Weather", "City");
@@ -46,9 +49,12 @@ function filterData(){
 	// Creates an infinite loop to sort through unfliltered data and fill the filtered lists
   while(true){
 		// Utilizes a conditional statement to break the infinite loop once all data has been filtered
+	  	// Adds some entries to the console for the purpose of diagnostic information
     if (index > dateUnfiltered.length){
 			console.log("Finished Filtering Data");
 			console.log("Filtered " + (index-1) + " entries of data");
+			console.log("The app is now loaded and ready for use");
+			showElement("forecastButton");
       break;
     }
 		// Utilizes a conditonal statement to filter data from the specified date into filtered datasets
