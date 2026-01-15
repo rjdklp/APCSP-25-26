@@ -57,7 +57,7 @@ function filterData(){
     if (index > dateUnfiltered.length){
 			console.log("Finished Filtering Data");
 			console.log("Filtered " + (index-1) + " entries of data");
-			console.log("It took " + (getTime() - startTime) + " milliseconds to accquire and load the necessary data");
+			console.log("It took " + (getTime() - startTime) + " milliseconds to accquire and process the necessary data");
 			console.log("The app is now loaded and ready for use");
 			showElement("forecastButton");
       break;
