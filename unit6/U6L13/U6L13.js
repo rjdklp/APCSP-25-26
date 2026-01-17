@@ -1,6 +1,6 @@
 var appStart = getTime();
 console.log("App has begun initialization");
-
+sigma
 function timeSinceInit(){
     console.log(((getTime() - appStart)/1000) + " Seconds since app intialization");
 }
