@@ -58,18 +58,28 @@ function newScreenNavigationButtons(previousScreenId, nextScreenId, backButtonId
         newButton(nextButtonId, "Next", 260, 420, 100, 50);
         onEvent(nextButtonId, "click", function(){
         setScreen(nextScreenId);
-        newScreenNavigationButtons("screen2", undefined, "screen3BackButton", undefined);
             });
     } else{
         return;
     }
 }
 
+// Already on screen1 so no set screen required
 newLabel("screen1Title", "Passwords Dataset Analyzer", 160, 100, 300, 100, 25);
 newLabel("screen1Intro", "Made by rjdklp, please enjoy", 160, 225, 250, 150, 18);
 newButton("screen1NextButton", "Next Screen", 260, 420, 100, 50);
-
 onEvent("screen1NextButton", "click", function(){
     setScreen("screen2");
-    newScreenNavigationButtons("screen1", "screen3", "screen2BackButton", "screen2NextButton");
 });
+
+setScreen("screen2");
+newScreenNavigationButtons("screen1", "screen3", "screen2BackButton", "screen2NextButton");
+
+// Code for screen2 here
+
+setScreen("screen3");
+newScreenNavigationButtons("screen2", undefined, "screen3BackButton", undefined);
+
+// Code for screen3 here
+
+setScreen("screen1");
