@@ -19,3 +19,17 @@ for(var index; index < indexLimit; index++){
 console.log("Finished fetching dataset in " + ((getTime() - datasetFetchInit)/1000) + " seconds and received " + (indexLimit + 1) + " entries \n");
 timeSinceInit();
 
+function centerX(desiredXPosition, elementWidth){
+    var truePosition = desiredXPosition - elementWidth/2;
+    return truePosition;
+}
+
+function centerY(desiredYPosition, elementHeight){
+    var truePosition = desiredYPosition - elementHeight/2;
+    return truePosition;
+}
+
+textLabel("s1Title", "Passwords Dataset Analysis");
+setPosition("s1Title", centerX(160, 300), centerY(50, 100), 300, 100);
+setProperty("s1Title", "font-size", 18);
+setProperty("s1Title", "text-align", "center");
