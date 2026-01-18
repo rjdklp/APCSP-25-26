@@ -47,18 +47,29 @@ function newButton(desiredId, desiredMessage, desiredXPosition, desiredYPosition
 }
 
 function newScreenNavigationButtons(previousScreenId, nextScreenId, backButtonId, nextButtonId){
-    if ((typeof previousScreenId !== "string") || (typeof nextScreenId !== "string") || (typeof backButtonId !== "string") || (typeof nextButtonId !== "string")){
-        throw new Error("newScreenNavigationButtons requires string based parameters");
+    if ((typeof previousScreenId !== "string") || (typeof backButtonId !== "string")){
+        throw new Error("newScreenNavigationButtons requires string based parameters, nextScreenId and nextButtonId are optional");
     }
     newButton(backButtonId, "Back", 60, 420, 100, 50);
-    newButton(nextButtonId, "Next", 260, 420, 100, 50);
+    onEvent(backButtonId, "click", function(){
+        setScreen(previousScreenId);
+    });
+    if ((typeof nextButtonId === "string") && (typeof nextScreenId === "string")){
+        newButton(nextButtonId, "Next", 260, 420, 100, 50);
+        onEvent(nextButtonId, "click", function(){
+        setScreen(nextScreenId);
+        newScreenNavigationButtons("screen2", undefined, "screen3BackButton", undefined);
+            });
+    } else{
+        return;
+    }
 }
 
 newLabel("screen1Title", "Passwords Dataset Analyzer", 160, 100, 300, 100, 25);
-newLabel("screen1Intro", "Made by rjdklp & Dom, please enjoy", 160, 225, 250, 150, 18);
-newButton("screen2NextScreenButton", "Next Screen", 260, 420, 100, 50);
+newLabel("screen1Intro", "Made by rjdklp, please enjoy", 160, 225, 250, 150, 18);
+newButton("screen1NextButton", "Next Screen", 260, 420, 100, 50);
 
-onEvent("screen2NextScreenButton", "click", function(){
+onEvent("screen1NextButton", "click", function(){
     setScreen("screen2");
     newScreenNavigationButtons("screen1", "screen3", "screen2BackButton", "screen2NextButton");
 });
