@@ -123,7 +123,200 @@ function fetchIndex(indexNumber){
     setProperty("screen2StrengthOut", "text", passwordsStrength[indexNumber]);
 }
 
-
+function dynamicFilter(category, bound){
+    if (bound == "Maximum"){
+        if (category == "Rank"){
+            var index = 0;
+            var secondIndex = 0;
+            var max;
+            var latestMax;
+            index = 0;
+            max = 0;
+            latestMax = max;
+            while(secondIndex<4){
+                while(index<indexLimit){
+                    if ((passwordsRank[index] > max) && (passwordsRank[index] < latestMax)){
+                        max = passwordsRank[index];
+                        index++
+                    } else {
+                        index++
+                        continue;
+                    }
+                } latestMax = max;
+                if (secondIndex == 0){
+                    setProperty("screen3Rank1Out", "text", max);
+                } if (secondIndex == 1){
+                    setProperty("screen3Rank2Out", "text", max);
+                } if (secondIndex == 2){
+                    setProperty("screen3Rank3Out", "text", max);
+                } if (secondIndex == 3){
+                    setProperty("screen3Rank4Out", "text", max);
+                } if (secondIndex == 4){
+                    setProperty("screen3Rank5Out", "text", max);
+                } 
+                secondIndex++;
+            }
+        } if (category == "Value"){
+            var index = 0;
+            var secondIndex = 0;
+            var max;
+            var latestMax;
+            index = 0;
+            max = 0;
+            latestMax = max;
+            while(secondIndex<4){
+                while(index<indexLimit){
+                    if ((passwordsValue[index] > max) && (passwordsValue[index] < latestMax)){
+                        max = passwordsValue[index];
+                        index++
+                    } else {
+                        index++
+                        continue;
+                    }
+                } latestMax = max;
+                if (secondIndex == 0){
+                    setProperty("screen3Rank1Out", "text", max);
+                } if (secondIndex == 1){
+                    setProperty("screen3Rank2Out", "text", max);
+                } if (secondIndex == 2){
+                    setProperty("screen3Rank3Out", "text", max);
+                } if (secondIndex == 3){
+                    setProperty("screen3Rank4Out", "text", max);
+                } if (secondIndex == 4){
+                    setProperty("screen3Rank5Out", "text", max);
+                } 
+                secondIndex++;
+            }
+        } if (category == "Strength"){
+            var index = 0;
+            var secondIndex = 0;
+            var max;
+            var latestMax;
+            index = 0;
+            max = 0;
+            latestMax = max;
+            while(secondIndex<4){
+                while(index<indexLimit){
+                    if ((passwordsStrength[index] > max) && (passwordsStrength[index] < latestMax)){
+                        max = passwordsStrength[index];
+                        index++
+                    } else {
+                        index++
+                        continue;
+                    }
+                } latestMax = max;
+                if (secondIndex == 0){
+                    setProperty("screen3Rank1Out", "text", max);
+                } if (secondIndex == 1){
+                    setProperty("screen3Rank2Out", "text", max);
+                } if (secondIndex == 2){
+                    setProperty("screen3Rank3Out", "text", max);
+                } if (secondIndex == 3){
+                    setProperty("screen3Rank4Out", "text", max);
+                } if (secondIndex == 4){
+                    setProperty("screen3Rank5Out", "text", max);
+                } 
+                secondIndex++;
+            }
+        }
+    }
+    if (bound == "Minimum"){
+        if (category == "Rank"){
+            var index = 0;
+            var secondIndex = 0;
+            var min;
+            var latestMin;
+            index = 0;
+            min = (10^10);
+            latestMin = min;
+            while(secondIndex<4){
+                while(index<indexLimit){
+                    if ((passwordsRank[index] < min) && (passwordsRank[index] > latestMin)){
+                        min = passwordsRank[index];
+                        index++
+                    } else {
+                        index++
+                        continue;
+                    }
+                } latestMin = min;
+                if (secondIndex == 0){
+                    setProperty("screen3Rank1Out", "text", min);
+                } if (secondIndex == 1){
+                    setProperty("screen3Rank2Out", "text", min);
+                } if (secondIndex == 2){
+                    setProperty("screen3Rank3Out", "text", min);
+                } if (secondIndex == 3){
+                    setProperty("screen3Rank4Out", "text", min);
+                } if (secondIndex == 4){
+                    setProperty("screen3Rank5Out", "text", min);
+                } 
+                secondIndex++;
+            }
+        } if (category == "Value"){
+            var index = 0;
+            var secondIndex = 0;
+            var min;
+            var latestMin;
+            index = 0;
+            min = (10^10);
+            latestMin = min;
+            while(secondIndex<4){
+                while(index<indexLimit){
+                    if ((passwordsValue[index] < min) && (passwordsValue[index] > latestMin)){
+                        min = passwordsValue[index];
+                        index++
+                    } else {
+                        index++
+                        continue;
+                    }
+                } latestMin = min;
+                if (secondIndex == 0){
+                    setProperty("screen3Rank1Out", "text", min);
+                } if (secondIndex == 1){
+                    setProperty("screen3Rank2Out", "text", min);
+                } if (secondIndex == 2){
+                    setProperty("screen3Rank3Out", "text", min);
+                } if (secondIndex == 3){
+                    setProperty("screen3Rank4Out", "text", min);
+                } if (secondIndex == 4){
+                    setProperty("screen3Rank5Out", "text", min);
+                } 
+                secondIndex++;
+            }
+        } if (category == "Strength"){
+            var index = 0;
+            var secondIndex = 0;
+            var min;
+            var latestMin;
+            index = 0;
+            min = (10^10);
+            latestMin = min;
+            while(secondIndex<4){
+                while(index<indexLimit){
+                    if ((passwordsStrength[index] < min) && (passwordsStrength[index] > latestMin)){
+                        min = passwordsStrength[index];
+                        index++
+                    } else {
+                        index++
+                        continue;
+                    }
+                } latestMin = min;
+                if (secondIndex == 0){
+                    setProperty("screen3Rank1Out", "text", min);
+                } if (secondIndex == 1){
+                    setProperty("screen3Rank2Out", "text", min);
+                } if (secondIndex == 2){
+                    setProperty("screen3Rank3Out", "text", min);
+                } if (secondIndex == 3){
+                    setProperty("screen3Rank4Out", "text", min);
+                } if (secondIndex == 4){
+                    setProperty("screen3Rank5Out", "text", min);
+                } 
+                secondIndex++;
+            }
+        }
+    }
+}
 
 
 // UI Element Creation Below
@@ -174,9 +367,9 @@ setScreen("screen3");
 newScreenNavigationButtons("screen2", "screen4", "screen3BackButton", "screen3NextButton");
 newLabel("screen3Title", "Passwords Filter", 160, 60, 400, 100, 25);
 newLabel("screen3Intro", "Allows user-directed filtering of the passwords dataset", 160, 120, 250, 150, 14);
-newButton("screen3FilterInput", "Click to filter", 160, 150, 100, 50);
-newDropdown("screen3CategoryInput", "rank", "value", "strength", undefined, undefined, undefined, undefined, undefined, undefined, undefined, 55, 150, 100, 30, 13);
-newDropdown("screen3FilterStyleInput", "maximum", "minimum", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 265, 150, 100, 30, 13);
+newButton("screen3FilterButton", "Click to filter", 160, 150, 100, 50);
+newDropdown("screen3CategoryInput", "Rank", "Value", "Strength", undefined, undefined, undefined, undefined, undefined, undefined, undefined, 55, 150, 100, 30, 13);
+newDropdown("screen3BoundInput", "Maximum", "Minimum", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 265, 150, 100, 30, 13);
 newLabel("screen3Rank1", "1:", 32, 220, 30, 20, 14);
 newLabel("screen3Rank2", "2:", 32, 240, 30, 20, 14);
 newLabel("screen3Rank3", "3:", 32, 260, 30, 20, 14);
@@ -187,6 +380,9 @@ newLabel("screen3Rank2Out", "", 64, 240, 200, 20, 10);
 newLabel("screen3Rank3Out", "", 64, 260, 200, 20, 10);
 newLabel("screen3Rank4Out", "", 64, 280, 200, 20, 10);
 newLabel("screen3Rank5Out", "", 64, 300, 200, 20, 10);
+onEvent("screen3FilterButton", "click", function(){
+    dynamicFilter((getText("screen3CategoryInput")), (getText("screen3BoundInput")));
+});
 
 setScreen("screen4");
 // Code for screen4 here
