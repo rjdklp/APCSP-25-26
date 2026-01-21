@@ -240,7 +240,6 @@ function timeUnitOutput(){
     var entryNum = -1;
     for (var timeUnitIndex = 1; timeUnitIndex < 6; timeUnitIndex++){
         entryNum = getNumber("screen3RankEntryOut" + timeUnitIndex);
-        console.log(entryNum);
         setProperty("screen3TimeUnitOut" + timeUnitIndex, "text", passwordsTime_Unit[entryNum-1]);
     }
 }
