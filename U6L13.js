@@ -240,8 +240,8 @@ function timeUnitOutput(){
     var entryNum = -1;
     for (var timeUnitIndex = 1; timeUnitIndex < 6; timeUnitIndex++){
         entryNum = getNumber("screen3RankEntryOut" + timeUnitIndex);
-        console.log(entryNum+1);
-        setProperty("screen3TimeUnitOut" + timeUnitIndex, "text", passwordsTime_Unit[entryNum+1]);
+        console.log(entryNum);
+        setProperty("screen3TimeUnitOut" + timeUnitIndex, "text", passwordsTime_Unit[entryNum]);
     }
 }
 
@@ -346,11 +346,11 @@ newLabel("screen3RankOut2", "", 220, 270, 200, 20, 18);
 newLabel("screen3RankOut3", "", 220, 290, 200, 20, 18);
 newLabel("screen3RankOut4", "", 220, 310, 200, 20, 18);
 newLabel("screen3RankOut5", "", 220, 330, 200, 20, 18);
-newLabel("screen3TimeUnitOut1", "", 270, 250, 200, 20, 14);
-newLabel("screen3TimeUnitOut2", "", 270, 270, 200, 20, 14);
-newLabel("screen3TimeUnitOut3", "", 270, 290, 200, 20, 14);
-newLabel("screen3TimeUnitOut4", "", 270, 310, 200, 20, 14);
-newLabel("screen3TimeUnitOut5", "", 270, 330, 200, 20, 14);
+newLabel("screen3TimeUnitOut1", "", 280, 250, 200, 20, 12);
+newLabel("screen3TimeUnitOut2", "", 280, 270, 200, 20, 12);
+newLabel("screen3TimeUnitOut3", "", 280, 290, 200, 20, 12);
+newLabel("screen3TimeUnitOut4", "", 280, 310, 200, 20, 12);
+newLabel("screen3TimeUnitOut5", "", 280, 330, 200, 20, 12);
 dynamicFilter(passwordsRank, "Maximum", 0, 999999);
 dynamicFilter(passwordsRank, "Minimum", 0, 999999);
 for (var i = 1; i<6; i++){
